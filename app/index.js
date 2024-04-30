@@ -14,8 +14,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BasicKeyboardAvoidingView from "../components/BasicKeyboardAvoidingView";
 import { screenWidth } from "../constants/layout";
 
-// import Message from "./Message";
-
 const Stack = createNativeStackNavigator();
 
 const onlineUsers = [{ user: "Chat with a bot" }];
