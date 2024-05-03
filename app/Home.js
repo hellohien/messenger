@@ -10,35 +10,17 @@ import {
   View,
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BasicKeyboardAvoidingView from "../components/BasicKeyboardAvoidingView";
 import { screenWidth } from "../constants/layout";
+import LayoutWrapper from "../components/LayoutWrapper";
 
-// import Message from "./Message";
-
-const Stack = createNativeStackNavigator();
-
-const onlineUsers = [{ user: "Chat with a bot" }];
-export default function Navigation() {
+export default function Home({ navigation }) {
   const [name, setName] = React.useState("");
 
-  const renderItem = ({ item }) => {
-    return (
-      <TouchableOpacity>
-        <Text>{item.user}</Text>
-      </TouchableOpacity>
-    );
-  };
   return (
     <BasicKeyboardAvoidingView>
-      <SafeAreaView>
-        <View
-          style={{
-            flex: 1,
-            justifyContent: "space-between",
-            marginVertical: 40,
-          }}
-        >
+      <LayoutWrapper>
+        <View style={styles.container}>
           <View>
             <Text style={styles.logo}>Messenger</Text>
             <TextInput
@@ -62,34 +44,28 @@ export default function Navigation() {
             <Button
               title="Next"
               color="#fff"
-              onPress={() => {}}
-              disabled={!name}
+              onPress={() => navigation.navigate("Online Users")}
+              // disabled={!name}
             />
           </View>
         </View>
-      </SafeAreaView>
+      </LayoutWrapper>
     </BasicKeyboardAvoidingView>
-    // <NavigationContainer>
-    //   <Stack.Navigator initialRouteName="Message">
-    //     <Stack.Screen name="Message" component={Message} />
-    //   </Stack.Navigator>
-    // </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
   input: {
     borderWidth: 1,
     borderColor: "#808080",
     borderRadius: 10,
     padding: 8,
     width: screenWidth * 0.74,
-  },
-  onlineNowWrapper: {
-    marginTop: 16,
-  },
-  onlineNow: {
-    marginVertical: 8,
   },
   button: {
     backgroundColor: "#b61e02",
