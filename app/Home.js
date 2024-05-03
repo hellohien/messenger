@@ -45,7 +45,6 @@ export default function Home({ navigation }) {
               title="Next"
               color="#fff"
               onPress={() => navigation.navigate("Online Users")}
-              // disabled={!name}
             />
           </View>
         </View>
