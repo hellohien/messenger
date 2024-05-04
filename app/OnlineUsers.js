@@ -36,7 +36,7 @@ export default function OnlineUsers({ navigation }) {
           <Button
             title="Next"
             color="#fff"
-            // onPress={() => navigation.navigate("Online Users")}
+            onPress={() => navigation.navigate("Message")}
             // disabled={!name}
           />
         </View>

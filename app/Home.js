@@ -29,16 +29,6 @@ export default function Home({ navigation }) {
               placeholder="Enter name"
               style={styles.input}
             />
-            {/* <View style={styles.onlineNowWrapper}>
-              <Text style={{ fontWeight: "600" }}>Online now:</Text>
-              <View style={styles.onlineNow}>
-                <FlatList
-                  data={onlineUsers}
-                  renderItem={renderItem}
-                  scrollEnabled={false}
-                />
-              </View>
-            </View> */}
           </View>
           <View style={styles.button}>
             <Button

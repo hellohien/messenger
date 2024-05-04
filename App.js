@@ -3,7 +3,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 
 import HomeScreen from "./app/Home";
-import MessageScreen from "./app/OnlineUsers";
+import OnlineUsersScreen from "./app/OnlineUsers";
+import MessageScreen from "./app/Message";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,8 +19,13 @@ export default function App() {
         />
         <Stack.Screen
           name="Online Users"
-          component={MessageScreen}
+          component={OnlineUsersScreen}
           options={{ headerTitle: "" }}
+        />
+        <Stack.Screen
+          name="Message"
+          component={MessageScreen}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
